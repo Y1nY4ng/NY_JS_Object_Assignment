@@ -93,30 +93,31 @@ let stolenItems = [
  function houseTotal(obj) {
  let sum = parseInt(obj.socks + obj.spoons + obj.nutella_jar + obj.keys + obj.shoelaces + obj.rotisserie_chicken);
    if (sum == 0) {
-     console.log("Lucky You!");
+     sum = "Lucky You!";
    }
    return sum;
  }
  // uncomment these out to test it out
  console.log(houseTotal(stolenItems[0])); 
- //console.log(houseTotal(stolenItems[1]));
- //console.log(houseTotal(stolenItems[2])); 
+ console.log(houseTotal(stolenItems[1]));
+ console.log(houseTotal(stolenItems[2])); 
   
  // PROBLEM TWO
  // Given an object of the stolen items for a household and a string in lowercase representing a specific item, return true if that item was stolen and false if it was not. 
 
  function isStolen(obj, item) {
- if (obj[item] > 0){
-   let s = "true";
- }else if (obj[item] = 0){
-   let s = "false";
+  let stat;
+ if (obj[item] >= 1){
+   stat = true;
+ }else if (obj[item] == 0){
+   stat = false;
  }
- return s
+ return stat
  }
  // uncomment these out to test it out
  console.log(isStolen(stolenItems[0], "keys")); 
- //console.log(houseTotal(stolenItems[1], "socks"));
- //console.log(houseTotal(stolenItems[2], "spoons")); 
+ console.log(isStolen(stolenItems[1], "socks"));
+ console.log(isStolen(stolenItems[2], "spoons")); 
  
  
  // EXTRA CREDIT!!!!! PROBLEM THREE
